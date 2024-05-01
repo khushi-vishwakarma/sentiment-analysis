@@ -1,0 +1,272 @@
+
+    <!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#000000" />
+  <link rel="shortcut icon" href="./assets/img/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="76x76" href="./assets/img/apple-icon.png" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+  <link rel="stylesheet"
+    href="https://cdn.jsdelivr.net/gh/creativetimofficial/tailwind-starter-kit/compiled-tailwind.min.css" />
+  <title>Amazon Alexa Reviews Analysis</title>
+</head>
+
+<body class="text-gray-800 antialiased">
+  <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.js" defer></script>
+
+  <h1 align="center">E-Commerce Store</h1>.
+  <div class="topnav">
+  <a class="active" href="#home">Home</a>
+  <a href="#products">Products</a>
+  <a href="#feedback">Feedback</a>
+
+</div>
+  <!--<nav>
+
+      <ul>
+
+        <li><a href="#">Products</a></li>
+        <li><a href = "#"> Feedback </a></li>
+      </ul>
+    </nav>-->
+
+  <main>
+    <section class="product">
+     <!-- <img src="Product1.jpg" alt="Product 1">-->
+          <img src="/static/Product1.jpg" alt="Product 1">
+      <h2>Amazon Echo Dot (5th Gen) | Smart speaker with Bigger sound, Motion Detection, Temperature Sensor, Alexa and Bluetooth| Blue</h2>
+      <p>5th (Latest) Generation Echo Dot with Alexa-The best sounding Echo Dot yet! With deeper bass and clearer vocals than all previous generations.
+Just ask Alexa to play music from Amazon Music, Spotify, Jio Saavn, Apple Music.(some apps may require subscription)
+Voice control Alexa compatible smart appliances like lights, ACs, TVs, geysers. Extend the experience to non-smart appliances using smart plugs (to be purchased separately)
+Automatically turn on light when you enter the room or switch on the AC when it gets hot using in-built motion detection and temperature sensor. Set these experiences using routines feature in Alexa app.
+Manage your day better by just asking Alexa to set reminders, pay bills, add items to shopping list and much more. Alexa can speak English and Hindi.
+Pause/resume music, snooze alarms, dismiss timers with just a tap.
+Use Echo Dot as a standalone speaker or pair your phone to use it as a Bluetooth speaker.
+Echo Dot comes with multiple privacy controls, including a mic off button.</p>
+      <button class="order-button" onclick="showOrderPopup()">Order</button>
+    </section>
+
+    <section class="product">
+     <!--<img src="Product2.jpg" alt="Product 2">-->
+        <img src="/static/Product2.jpg" alt="Product 2">
+
+
+      <h2> (Refurbished) Samsung Galaxy S21 5G (Phantom Gray, 8GB, 128GB Storage) with No Cost EMI/Additional Exchange Offers</h2>
+      <p>Product will be in refurbished condition and may have a few visible signs of earlier use. Backed by minimum six months Warranty provided by the seller.
+This product has been professionally inspected and tested to be fully functional by the Sellers.
+Products correspond to one of the following cosmetic conditions Excellent condition - no signs of cosmetic damage when held 30 centimeters away. Good condition - Light scratches, barely visible when holding the device 30 centimeters away. Acceptable condition - Scratches visible when holding the device 30 centimeters away and perceptible to the touch.
+Product may be packed in a non-branded box.</p>
+      <button class="order-button" onclick="showOrderPopup()">Order</button>
+
+    </section>
+
+  <main>
+    <div class="relative pt-16 pb-32 flex content-center items-center justify-center" style="min-height: 75vh;">
+      <div class="absolute top-0 w-full h-full bg-center bg-cover"
+        style='background-image: linear-gradient(90deg, rgba(17,223,169,1) 0%, rgba(3,60,88,1) 49%, rgba(10,32,50,1) 100%);'>
+        <span id="blackOverlay" class="w-full h-full absolute opacity-50 bg-black"></span>
+      </div>
+      <div class="container relative mx-auto">
+        <div class="items-center flex flex-wrap">
+          <div class="w-full lg:w-6/12 px-4 ml-auto mr-auto text-center">
+            <div class="pr-12">
+              <h1 class="text-white font-semibold text-5xl">
+                Understand the emotions behind the words.😊
+              </h1>
+              <p class="mt-4 text-lg text-gray-300">
+                Text sentiment prediction is a powerful tool that can help you to understand the emotions and opinions
+                expressed in your text data.
+                This information can be used to improve your business in a number of ways
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="top-auto bottom-0 left-0 right-0 w-full absolute pointer-events-none overflow-hidden"
+        style="height: 70px;">
+        <svg class="absolute bottom-0 overflow-hidden" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"
+          version="1.1" viewBox="0 0 2560 100" x="0" y="0">
+          <polygon class="text-gray-300 fill-current" points="2560 0 2560 100 0 100"></polygon>
+        </svg>
+      </div>
+    </div>
+
+    <title>Sentiment Analysis</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+
+    <style>
+        body {
+            background-color: #f8f9fa; /* Set your desired background color */
+        }
+
+        .container {
+            margin-top: 50px;
+        }
+
+        h1 {
+            color: #007bff; /* Set your desired heading color */
+        }
+
+        .form-control {
+            background-color: #ffffff; /* Set your desired textarea background color */
+        }
+
+        .btn-primary {
+            background-color: #007bff; /* Set your desired button background color */
+            border-color: #007bff;
+        }
+
+        .btn-primary:hover {
+            background-color: #0069d9; /* Set your desired button hover background color */
+            border-color: #0062cc;
+        }
+
+        .alert-success {
+            background-color: #d4edda; /* Set your desired success alert background color */
+            color: #155724; /* Set your desired success alert text color */
+            border-color: #c3e6cb;
+        }
+
+        .alert-danger {
+            background-color: #f8d7da; /* Set your desired danger alert background color */
+            color: #721c24; /* Set your desired danger alert text color */
+            border-color: #f5c6cb;
+        }
+        nav ul {
+      list-style-type: none;
+      padding: 0;
+      color: black;
+    }
+
+    nav ul li {
+      display: inline;
+      margin-right: 20px;
+      color: black;
+    }
+
+    nav ul li a {
+      color: #black;
+      text-decoration: none;
+    }
+
+    main {
+      padding: 20px;
+    }
+
+    .product {
+      margin-bottom: 40px;
+    }
+
+    .product img {
+      width: 200px;
+      height: auto;
+    }
+
+    .product h2 {
+      margin-top: 10px;
+    }
+
+    .product button {
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      cursor: pointer;
+    }
+
+    .product {
+      display: inline-block;
+      margin-right: 20px; /* Add margin between products */
+    }
+    /* Add a black background color to the top navigation */
+.topnav {
+  background-color: #333;
+  overflow: hidden;
+}
+
+/* Style the links inside the navigation bar */
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+/* Change the color of links on hover */
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+/* Add a color to the active/current link */
+.topnav a.active {
+  background-color: #04AA6D;
+  color: white;
+}
+
+    footer {
+      background-color: #333;
+      color: #fff;
+      text-align: center;
+      padding: 20px;
+    }
+     /* Popup box */
+    .popup {
+      display: none;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: rgba(0, 0, 0, 0.5);
+      padding: 20px;
+      color: #fff;
+      border-radius: 10px;
+    }
+    </style>
+
+<body>
+    <div class="container mt-5">
+        <h1 class="mb-4">Sentiment Analysis</h1>
+        <form method="POST" action="{{ url_for('analyze_sentiment') }}">
+            <div class="form-group">
+                <label for="comment">Enter your comment:</label>
+                <textarea class="form-control" id="comment" name="comment" rows="3"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Analyze</button>
+        </form>
+
+        {% if sentiment is defined %}
+            <div class="mt-4">
+                {% if sentiment == 1 %}
+                    <div class="alert alert-success" role="alert">Positive comment!</div>
+                {% else %}
+                    <div class="alert alert-danger" role="alert">Negative comment!</div>
+                {% endif %}
+            </div>
+        {% endif %}
+    </div>
+
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+ <footer>
+    <p>&copy; 2024 E-Commerce Store. All rights reserved.</p>
+  </footer>
+    <div id="orderPopup" class="popup">
+    <p>Order Successful!</p>
+  </div>
+ <script>
+    function showOrderPopup() {
+      var popup = document.getElementById("orderPopup");
+      popup.style.display = "block";
+      setTimeout(function() {
+        popup.style.display = "none";
+      }, 2000); // Hide the popup after 2 seconds
+    }
+  </script>
+</body>
+</html>
